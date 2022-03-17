@@ -24,10 +24,12 @@ def getMFPDiary(client, year, month, day):
         day_data.totals["fat"] = 0
     if "protein" not in day_data.totals:
         day_data.totals["protein"] = 0
+    if "chol" not in day_data.totals:
+        day_data.totals["chol"] = 0
     if "fiber" not in day_data.totals:
         day_data.totals["fiber"] = 0
     if not weight:
-        weight = 0
+        weight = ''
     else:
         weight = list(weight.items())[0][1]
     return {
@@ -36,6 +38,7 @@ def getMFPDiary(client, year, month, day):
         "carbs": day_data.totals["carbohydrates"],
         "fat": day_data.totals["fat"],
         "protein": day_data.totals["protein"],
+        "cholesteral": day_data.totals["chol"],
         "fiber": day_data.totals["fiber"],
         "weight": weight,
     }

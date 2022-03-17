@@ -1,20 +1,21 @@
 # https://pyshark.com/google-sheets-api-using-python/#creating-google-api-credentials
 # https://docs.gspread.org/en/latest/user-guide.html#getting-a-cell-value
 
-import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime, date, timedelta
+from time import sleep
+import gspread
 import mfphelper
 import whoophelper
 import json
-from datetime import datetime, date, timedelta
 import sys
 import argparse
 import configparser
 
 
-def updateMFPData(day, date, map, worksheet, config):
+def updateMFPData(login, day, date, map, worksheet, config):
     diary = mfphelper.getMFPDiary(
-        mfphelper.login(config["mfp"]["username"], config["mfp"]["password"]),
+        login,
         date.year,
         date.month,
         date.day,
@@ -28,8 +29,8 @@ def updateMFPData(day, date, map, worksheet, config):
         worksheet.update(coord, diary[entry])
 
 
-def updateWhoopData(day, date, map, worksheet, whoop_creds):
-    data = whoophelper.getWhoopData(whoophelper.login(whoop_creds), date, date)
+def updateWhoopData(login, day, date, map, worksheet ):
+    data = whoophelper.getWhoopData( login, date, date)
     # print(data)
     for entry in data:
         # print(entry)
@@ -93,9 +94,15 @@ def main(args):
     dates = getDateRange(start, end)
 
     day = args.sday
+    login = mfphelper.login(config["mfp"]["username"], config["mfp"]["password"])
     for date in dates:
-        updateMFPData(str(day), date, map, worksheet, config)
-        updateWhoopData(str(day), str(date), map, worksheet, ini)
+        updateMFPData(login, str(day), date, map, worksheet, config)
+        day += 1
+
+    day = args.sday
+    login = whoophelper.login(ini)
+    for date in dates:
+        updateWhoopData(login, str(day), str(date), map, worksheet)
         day += 1
 
 

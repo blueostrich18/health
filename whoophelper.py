@@ -1,6 +1,7 @@
 # https://github.com/irickman/whoop-downloader
 
 from whoop_download import whoop_login
+from math import floor
 import pandas
 
 
@@ -15,6 +16,7 @@ def getWhoopData(client, start_date, end_date):
 
     resting_hr = keydata["recovery.restingHeartRate"]
     sleep = keydata["sleep.sleeps"].values.tolist()[0]
+
     sleep_efficiency = round(float(sleep[0]["sleepEfficiency"]), 2)
 
     datadict = keydata.to_dict()
@@ -22,9 +24,9 @@ def getWhoopData(client, start_date, end_date):
     HRV = int(round(float(datadict["recovery.heartRateVariabilityRmssd"][0]) * 1000, 0))
 
     qualitySleep = float(datadict["sleep.qualityDuration"][0])
-    hours = int(round(qualitySleep / 60, 0))
+    hours = int(floor(qualitySleep / 60))
     mins = int(round(qualitySleep % 60, 0))
-    sleep_duration = str(hours) + "." + str(mins)
+    sleep_duration = '{}:{:02d}'.format( hours,mins)
 
     # print(datadict)
 
