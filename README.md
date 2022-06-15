@@ -29,7 +29,13 @@ url={url of google sheet}
 [mfp]
 username=
 password=
-```
+
+[fitbit]
+client_id={get from dev.fitbit.com}
+client_secret={get from dev.fitbit.com}
+uri={Must be HTTPS and the same as the one used when setting up the app in dev.fitbit.com}
+use_whoo_data={yes if you prefer to use the whoop data for RHR, HVR, and sleep}
+``` 
 
 Configure your spreadsheet_map.json to match the layout of your spreadsheet. This is how the program knows what data goes in what cells.
 
@@ -50,4 +56,26 @@ optional arguments:
 python upload.py -sheet "Week1" -start "2021-12-27" -end "2021-12-29"
 ```
 
+## Fitbit 
+Installation of the python fitbit modules is required but will need to be modified. Also HTTPS is required by Fitbit. Create a private key and a cert. To setup the fitbit app dev follow https://towardsdatascience.com/collect-your-own-fitbit-data-with-python-ff145fa10873
 
+Next you will need to modify the Python FitBit module by editing the file api.py, for me located /Users/<username>/Library/Python/3.9/lib/python/site-packages/fitbit/api.py.
+Modify apy.py to add 'hrv' to the RESOURCE_LIST
+```python
+ 190     API_ENDPOINT = "https://api.fitbit.com"
+ 191     API_VERSION = 1
+ 192     WEEK_DAYS = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY']
+ 193     PERIODS = ['1d', '7d', '30d', '1w', '1m', '3m', '6m', '1y', 'max']
+ 194 
+ 195     RESOURCE_LIST = [
+ 196         'body',
+ 197         'activities',
+ 198         'foods/log',
+ 199         'foods/log/water',
+ 200         'sleep',
+ 201         'heart',
+ 202         'bp',
+ 203         'glucose',
+ 204         'hrv',
+ 205     ]
+```

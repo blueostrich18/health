@@ -2,147 +2,203 @@
     "1": [
         {
             "mfp": {
-                "calories": "C23:E23",
-                "protein": "C24:E24",
-                "carbs": "C25:E25",
-                "fat": "C26:E26",
-                "fiber": "C27:E27",
-                "water": "C28:E28",
+                "calories": "C25:E25",
+                "protein": "C26:E26",
+                "carbs": "C27:E27",
+                "fat": "C28:E28",
+                "fiber": "C29:E29",
+                "cholesteral": "C30:E30",
+                "water": "C31:E31",
                 "weight": "C8:E8"
             },
             "whoop": {
-                "sleep_duration": "C42:E42",
-                "sleep_effeciency": "C43:E43",
-                "HRV": "C50:E50",
-                "RHR": "C51:E51",
-                "strain": "C52:E52",
-                "recovery": "C53:E53"
+                "sleep_duration": "C46:E46",
+                "sleep_efficiency": "C47:E47",
+                "HRV": "C54:E54",
+                "RHR": "C55:E55",
+                "strain": "C56:E56",
+                "recovery": "C57:E57"
+            },
+            "fitbit": {
+                "sleep_duration": "C46:E46",
+                "sleep_efficiency": "C47:E47",
+                "HRV": "C54:E54",
+                "RHR": "C55:E55",
+                "steps": "C43:E43"
             }
         }
     ],
     "2": [
         {
             "mfp": {
-                "calories": "F23:H23",
-                "protein": "F24:H24",
-                "carbs": "F25:H25",
-                "fat": "F26:H26",
-                "fiber": "F27:H27",
-                "water": "F28:H28",
+                "calories": "F25:H25",
+                "protein": "F26:H26",
+                "carbs": "F27:H27",
+                "fat": "F28:H28",
+                "fiber": "F29:H29",
+                "cholesteral": "F30:H30",
+                "water": "F31:H31",
                 "weight": "F8:H8"
             },
             "whoop": {
-                "sleep_duration": "F42:H42",
-                "sleep_effeciency": "F43:H43",
-                "HRV": "F50:H50",
-                "RHR": "F51:H51",
-                "strain": "F52:H52",
-                "recovery": "F53:H53"
+                "sleep_duration": "F46:H46",
+                "sleep_efficiency": "F47:H47",
+                "HRV": "F54:H54",
+                "RHR": "F55:H55",
+                "strain": "F56:H56",
+                "recovery": "F57:H57"
+            },
+            "fitbit": {
+                "sleep_duration": "F46:H46",
+                "sleep_efficiency": "F47:H47",
+                "HRV": "F54:H54",
+                "RHR": "F55:H55",
+                "steps": "F43:H43"
             }
         }
     ],
     "3": [
         {
             "mfp": {
-                "calories": "I23:K23",
-                "protein": "I24:K24",
-                "carbs": "I25:K25",
-                "fat": "I26:K26",
-                "fiber": "I27:K27",
-                "water": "I28:K28",
+                "calories": "I25:K25",
+                "protein": "I26:K26",
+                "carbs": "I27:K27",
+                "fat": "I28:K28",
+                "fiber": "I29:K29",
+                "cholesteral": "I30:K30",
+                "water": "I31:K31",
                 "weight": "I8:K8"
             },
             "whoop": {
-                "sleep_duration": "I42:K42",
-                "sleep_effeciency": "I43:K43",
-                "HRV": "I50:K50",
-                "RHR": "I51:K51",
-                "strain": "I52:K52",
-                "recovery": "I53:K53"
+                "sleep_duration": "I46:K46",
+                "sleep_efficiency": "I47:K47",
+                "HRV": "I54:K54",
+                "RHR": "I55:K55",
+                "strain": "I56:K56",
+                "recovery": "I57:K57"
+            },
+            "fitbit": {
+                "sleep_duration": "I46:K46",
+                "sleep_efficiency": "I47:K47",
+                "HRV": "I54:K54",
+                "RHR": "I55:K55",
+                "steps": "I43:K43"
             }
         }
     ],
     "4": [
         {
             "mfp": {
-                "calories": "L23:N23",
-                "protein": "L24:N24",
-                "carbs": "L25:N25",
-                "fat": "L26:N26",
-                "fiber": "L27:N27",
-                "water": "L28:N28",
+                "calories": "L25:N25",
+                "protein": "L26:N26",
+                "carbs": "L27:N27",
+                "fat": "L28:N28",
+                "fiber": "L29:N29",
+                "cholesteral": "L30:N30",
+                "water": "L31:N31",
                 "weight": "L8:N8"
             },
             "whoop": {
-                "sleep_duration": "L42:N42",
-                "sleep_effeciency": "L43:N43",
-                "HRV": "L50:N50",
-                "RHR": "L51:N51",
-                "strain": "L52:N52",
-                "recovery": "L53:N53"
+                "sleep_duration": "L46:N46",
+                "sleep_efficiency": "L47:N47",
+                "HRV": "L54:N54",
+                "RHR": "L55:N55",
+                "strain": "L56:N56",
+                "recovery": "L57:N57"
+            },
+            "fitbit": {
+                "sleep_duration": "L46:N46",
+                "sleep_efficiency": "L47:N47",
+                "HRV": "L54:N54",
+                "RHR": "L55:N55",
+                "steps": "L43:N43"
             }
         }
     ],
     "5": [
         {
             "mfp": {
-                "calories": "O23:Q23",
-                "protein": "O24:Q24",
-                "carbs": "O25:Q25",
-                "fat": "O26:Q26",
-                "fiber": "O27:Q27",
-                "water": "O28:Q28",
+                "calories": "O25:Q25",
+                "protein": "O26:Q26",
+                "carbs": "O27:Q27",
+                "fat": "O28:Q28",
+                "fiber": "O29:Q29",
+                "cholesteral": "O30:Q30",
+                "water": "O31:Q31",
                 "weight": "O8:Q8"
             },
             "whoop": {
-                "sleep_duration": "O42:Q42",
-                "sleep_effeciency": "O43:Q43",
-                "HRV": "O50:Q50",
-                "RHR": "O51:Q51",
-                "strain": "O52:Q52",
-                "recovery": "O53:Q53"
+                "sleep_duration": "O46:Q46",
+                "sleep_efficiency": "O47:Q47",
+                "HRV": "O54:Q54",
+                "RHR": "O55:Q55",
+                "strain": "O56:Q56",
+                "recovery": "O57:Q57"
+            },
+            "fitbit": {
+                "sleep_duration": "O46:Q46",
+                "sleep_efficiency": "O47:Q47",
+                "HRV": "O54:Q54",
+                "RHR": "O55:Q55",
+                "steps": "O43:Q43"
             }
         }
     ],
     "6": [
         {
             "mfp": {
-                "calories": "R23:TE23",
-                "protein": "R24:T24",
-                "carbs": "R25:T25",
-                "fat": "R26:T26",
-                "fiber": "R27:T27",
-                "water": "R28:T28",
+                "calories": "R25:T25",
+                "protein": "R26:T26",
+                "carbs": "R27:T27",
+                "fat": "R28:T28",
+                "fiber": "R29:T29",
+                "cholesteral": "R30:T30",
+                "water": "R31:T31",
                 "weight": "R8:T8"
             },
             "whoop": {
-                "sleep_duration": "R42:T42",
-                "sleep_effeciency": "R43:T43",
-                "HRV": "R50:T50",
-                "RHR": "R51:T51",
-                "strain": "R52:T52",
-                "recovery": "R53:T53"
+                "sleep_duration": "R46:T46",
+                "sleep_efficiency": "R47:T47",
+                "HRV": "R54:T54",
+                "RHR": "R55:T55",
+                "strain": "R56:T56",
+                "recovery": "R57:T57"
+            },
+            "fitbit": {
+                "sleep_duration": "R46:T46",
+                "sleep_efficiency": "R47:T47",
+                "HRV": "R54:T54",
+                "RHR": "R55:T55",
+                "steps": "R43:T43"
             }
         }
     ],
     "7": [
         {
             "mfp": {
-                "calories": "U23:W23",
-                "protein": "U24:W24",
-                "carbs": "U25:W25",
-                "fat": "U26:W26",
-                "fiber": "U27:W27",
-                "water": "U28:W28",
+                "calories": "U25:W25",
+                "protein": "U26:W26",
+                "carbs": "U27:W27",
+                "fat": "U28:W28",
+                "fiber": "U29:W29",
+                "cholesteral": "U30:W30",
+                "water": "U31:W31",
                 "weight": "U8:W8"
             },
             "whoop": {
-                "sleep_duration": "U42:W42",
-                "sleep_effeciency": "U43:W43",
-                "HRV": "U50:W50",
-                "RHR": "U51:W51",
-                "strain": "U52:W52",
-                "recovery": "U53:W53"
+                "sleep_duration": "U46:W46",
+                "sleep_efficiency": "U47:W47",
+                "HRV": "U54:W54",
+                "RHR": "U55:W55",
+                "strain": "U56:W56",
+                "recovery": "U57:W57"
+            },
+            "fitbit": {
+                "sleep_duration": "U46:W46",
+                "sleep_efficiency": "U47:W47",
+                "HRV": "U54:W54",
+                "RHR": "U55:W55",
+                "steps": "U43:W43"
             }
         }
     ],

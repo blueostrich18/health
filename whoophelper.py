@@ -32,7 +32,7 @@ def getWhoopData(client, start_date, end_date):
 
     return {
         "sleep_duration": sleep_duration or 0,
-        "sleep_effeciency": sleep_efficiency or 0,
+        "sleep_efficiency": sleep_efficiency or 0,
         "HRV": HRV or 0,
         "RHR": int(resting_hr[0]) or 0,
         "strain": round(datadict["strain.score"][0], 1) or 0,

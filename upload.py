@@ -11,7 +11,25 @@ import json
 import sys
 import argparse
 import configparser
+import fitbithelper
+import traceback
 
+def updateFitBitData(login, day, date, map, worksheet, use_whoop_data="yes"):
+    data = fitbithelper.getFBDiary( 
+        login,
+        date.year,
+        date.month,
+        date.day,
+    )
+    for entry in data:
+        if not use_whoop_data == "no" and not entry == "steps":
+            continue
+        try:
+            coord = map[day][0]["fitbit"][entry]
+            worksheet.update(coord, data[entry])
+        except:
+            print("Failed fitbit")
+            traceback.print_exc()
 
 def updateMFPData(login, day, date, map, worksheet, config):
     diary = mfphelper.getMFPDiary(
@@ -23,19 +41,24 @@ def updateMFPData(login, day, date, map, worksheet, config):
     # print(diary)
     for entry in diary:
         # print(entry)
-        coord = map[day][0]["mfp"][entry]
-        if entry == "water":
-            diary[entry] = round(float(diary[entry]) / 1000, 2)
-        worksheet.update(coord, diary[entry])
+        try:
+            coord = map[day][0]["mfp"][entry]
+            if entry == "water":
+                diary[entry] = round(float(diary[entry]) / 1000, 2)
+            worksheet.update(coord, diary[entry])
+        except:
+            traceback.print_exc()
 
 
 def updateWhoopData(login, day, date, map, worksheet ):
     data = whoophelper.getWhoopData( login, date, date)
     # print(data)
     for entry in data:
-        # print(entry)
-        coord = map[day][0]["whoop"][entry]
-        worksheet.update(coord, data[entry])
+        try:
+            coord = map[day][0]["whoop"][entry]
+            worksheet.update(coord, data[entry])
+        except:
+            traceback.print_exc()
 
 
 def checkIfComplete(worksheet, map):
@@ -96,14 +119,40 @@ def main(args):
     day = args.sday
     login = mfphelper.login(config["mfp"]["username"], config["mfp"]["password"])
     for date in dates:
-        updateMFPData(login, str(day), date, map, worksheet, config)
+        try:
+            updateMFPData(login, str(day), date, map, worksheet, config)
+        except:
+            print("Failed to Update MFP data")
         day += 1
 
     day = args.sday
     login = whoophelper.login(ini)
     for date in dates:
-        updateWhoopData(login, str(day), str(date), map, worksheet)
+        try:
+            updateWhoopData(login, str(day), str(date), map, worksheet)
+        except:
+            print("Failed to Update Whoop data")
         day += 1
+
+    day = args.sday
+    login = fitbithelper.login(config['fitbit']['client_id'],
+        config['fitbit']['client_secret'],
+        config['fitbit']['uri'])
+    for date in dates:
+        try:
+            updateFitBitData(
+                login, 
+                str(day), 
+                date, 
+                map, 
+                worksheet, 
+                use_whoop_data=config['fitbit']['use_whoop_data'])
+        except:
+            print("Failed to Update Fitbit data")
+            traceback.print_exc()
+            
+        day += 1
+
 
 
 if __name__ == "__main__":
